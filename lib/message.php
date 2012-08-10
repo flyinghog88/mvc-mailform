@@ -216,24 +216,13 @@ class Message {
      *  
      */
     public function sendmail() {
-        // メール送信準備
-        $to = "tsukasa@koiz.me"; // 宛先
-        $from = "php-master@linuxacademy.ne.jp"; // 差出人
-        $subject = "問い合わせ"; // 件名
-        $body = "問い合わせ内容は以下の通りです。
-氏名：{$this->name}
-性別：{$this->gender}
-〒：{$this->zip}
-メッセージ：
-{$this->message}
-";
-        // 差出人設定
-        $headers = "From: {$from}";
-        $options = "-f{$from}";
-        // メール送信
-        mb_language("Japanese");
-        mb_internal_encoding("UTF-8");
-        mb_send_mail($to, $subject, $body, $headers, $options);
+        // メール送信クラス
+        require_once "../lib/mail.php";
+        Mail::prepare();
+        // オブジェクトをアサイン
+        Mail::$smarty->assign("msg", $this);
+        // 送信
+        Mail::send(MAIL_TO, MAIL_FROM, MAIL_SUBJECT, "mail.tpl");
     }
     
     /**

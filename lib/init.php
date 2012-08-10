@@ -26,11 +26,13 @@ class Init {
     public static function execute() {
         // セッションの開始
         session_start();
-        // Smartyのインスタンス化
+        // マルチバイト文字列設定
+        mb_language("Japanese");
+        mb_internal_encoding("UTF-8");
+        // Smartyのインスタンス化と設定
         static::$smarty = new Smarty;
-        // Smarty設定
         static::$smarty->error_reporting  = E_ALL & ~ E_NOTICE;
-        static::$smarty->template_dir     = TEMPLATES_DIR;
+        static::$smarty->template_dir     = TEMPLATE_DIR;
         static::$smarty->compile_dir      = COMPILE_DIR;
         
         // データベースに接続する

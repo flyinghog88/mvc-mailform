@@ -20,6 +20,12 @@ const DB_ENCODING = "utf8";
 // データベース名
 const DB_NAME = "mvc_mailform";
 // Smartyテンプレートディレクトリ
-const TEMPLATES_DIR = "../templates";
+const TEMPLATE_DIR = "../templates";
 // Smartyコンパイル済みテンプレートディレクトリ
 const COMPILE_DIR = "../tempaltes_c";
+// メール送信先アドレス
+const MAIL_TO = "tsukasa@koiz.me";
+// メール差出人アドレス
+const MAIL_FROM = "tsukasa@koiz.me";
+// メール件名
+const MAIL_SUBJECT = "問い合わせ";
