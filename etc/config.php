@@ -22,7 +22,7 @@ const DB_NAME = "mvc_mailform";
 // Smartyテンプレートディレクトリ
 const TEMPLATE_DIR = "../templates";
 // Smartyコンパイル済みテンプレートディレクトリ
-const COMPILE_DIR = "../tempaltes_c";
+const COMPILE_DIR = "../templates_c";
 // メール送信先アドレス
 const MAIL_TO = "tsukasa@koiz.me";
 // メール差出人アドレス
